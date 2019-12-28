@@ -19,32 +19,81 @@ if (a === b) {
 - `require` can be used only for dynamic import
 ## React Components
 
-For UI components U should have folder `ui`, 
+•For UI components U should have folder `ui`, 
 for presentation components - `components`, 
-for components with business logic - `containers`
+for components with business logic - `containers`.
 
-CamelCase for components name (and all class names). 
+•CamelCase for components name (and all class names). 
 
-Folder structure:
+•Folder structure:
 <pre>
 components
-  ConponentName
+  ComponentName
     index.ts(js)
     styles.ts(js)
 </pre>
 
+•Props should be desctructed:
+```
+import React from 'react';
+
+//For functional components
+
+const SmallComponent = ({ title, value }) => {};
+// or
+const BigComponent = props => {
+  const {
+    title,
+    value,
+    options,
+    onClick,
+    onChange
+  } = props;
+};
+
+//For classes
+
+class ClassComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  handleChange() {
+    const { value } = this.props;
+    onChange(value);
+  }
+};
+
+```
+
 ## Styled Components
 ```js
-import * as UI from 'path';
+import * as UI from './styles';
 
-<UI.Container/>
+<UI.Container />
 ```
 
 Use api instance
 
 ## TypeScript
 - Don't use any
-- `props` and `state` should be interfaces
+- `props` and `state` should be interfaces:
+
+```
+import { Component } from 'react';
+
+interface IComponentProps = {
+  // ...
+}
+
+interface IComponentState = {
+  // ...
+}
+
+class Component<IComponentProps, IComponentState> extends Component {
+  // ...
+}
+```
 
 ## npm / yarn scripts
 `dev` - start development server fot local development
@@ -53,7 +102,7 @@ Use api instance
 
 `start` - run server for production stage
 
-For local development U should copy all files `<name>.example` and rename them to `<name>`
+For local development you should copy all files `<name>.example` and rename them to `<name>`
 
 ## Redux
 Folder store in src, structure:
