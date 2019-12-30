@@ -96,11 +96,14 @@ class Component<IComponentProps, IComponentState> extends Component {
 ```
 
 ## npm / yarn scripts
-`dev` - start development server fot local development
 
-`build` - build chunks and static for production stage
+For `next`-based projects:
 
-`start` - run server for production stage
+•`dev` - start development server fot local development
+
+•`build` - build chunks and static for production stage
+
+•`start` - run server for production stage
 
 For local development you should copy all files `<name>.example` and rename them to `<name>`
 
@@ -117,3 +120,10 @@ Can contain either index file or separate files for reduces, actions, actions cr
 
 - Action type should be capitalise.
 - Reducer should use switch-case construction
+
+## GIT
+•Every task must be in branch named as task number, like `AIZHKNDSUP-699`.
+
+•Commit message must describe what you have did in this commit (this is obvious, but someone forget it).
+
+•Commit message must contain the task number. If you stick to the first paragraph, it's easy to use [pre-commit-message git-hook](https://gist.github.com/bartoszmajsak/1396344)
