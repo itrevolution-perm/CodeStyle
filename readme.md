@@ -73,7 +73,7 @@ import * as UI from './styles';
 <UI.Container />
 ```
 
-Use api instance
+We have mixin-helpers *smaller* and *bigger* for adaptive layout and colors constants in almost all projects.
 
 ## TypeScript
 - Don't use any
@@ -120,6 +120,8 @@ Can contain either index file or separate files for reduces, actions, actions cr
 
 - Action type should be capitalise.
 - Reducer should use switch-case construction
+
+Use api instance
 
 ## GIT
 •Every task must be in branch named as task number, like `AIZHKNDSUP-699`.
